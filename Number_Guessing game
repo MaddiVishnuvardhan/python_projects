@@ -9,5 +9,5 @@ try:
         print("high value")
       else:
         print(f"correct number:{num}")
-except:
+except ValueError:
       print("enter valid number ")
