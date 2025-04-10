@@ -1,0 +1,23 @@
+his_name=input("enter his name:")
+her_name=input("enter her name:")
+name=his_name+her_name
+name=name.lower()
+t=name.count("t")
+r=name.count("r")
+u=name.count("u")
+e=name.count("e")
+true = t+r+u+e
+
+l=name.count("l")
+o=name.count("o")
+v=name.count("v")
+e=name.count("e")
+love=l+o+v+e
+ture_love= int(str(true)+str(love))
+print(f"Love Score is {ture_love}")
+if ture_love > 80:
+    print("You're a perfect match! ")
+elif 40 <= ture_love <= 80:
+    print("There's potential here ")
+else:
+    print("You might be better as friends ")
