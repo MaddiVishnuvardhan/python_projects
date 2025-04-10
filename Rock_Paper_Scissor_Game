@@ -1,0 +1,17 @@
+import random
+player=input("enter \"rock\",\"paper\",\"scissor\": ").lower()
+if player == "rock" or player == "paper" or player =="scissor":
+    print(player)
+    options=["rock","paper","scissor"]
+    c=random.choice(options)
+    print(c)
+    if player==c:
+            print("draw")
+    elif(player=="rock" and c=="scissor" or
+         player=="paper" and c=="rock" or
+         player=="scissor" and c=="paper"):
+            print("you win")
+    else:
+            print("computer win ")
+else:
+    print("Invalid Choice ")
