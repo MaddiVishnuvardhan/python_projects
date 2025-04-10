@@ -1,0 +1,13 @@
+import random
+num=random.randint(0,100) #generate random numbers
+try:
+   for i in range(10):     #10 attepmts
+      gu = int(input("Enter number b/w (0-100):"))
+      if num>gu:
+        print("low value")
+      elif num<gu:
+        print("high value")
+      else:
+        print(f"correct number:{num}")
+except:
+      print("enter valid number ")
