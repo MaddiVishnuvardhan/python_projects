@@ -1,0 +1,103 @@
+import random
+#import hangman_stages   #create new stage file and import
+
+stages = [
+    """
+       --------
+       |      |
+       |      
+       |    
+       |      
+       |     
+    --------
+    """,
+    """
+       --------
+       |      |
+       |      O
+       |    
+       |      
+       |     
+    --------
+    """,
+    """
+       --------
+       |      |
+       |      O
+       |      |
+       |      
+       |     
+    --------
+    """,
+    """
+       --------
+       |      |
+       |      O
+       |     /|
+       |      
+       |     
+    --------
+    """,
+    """
+       --------
+       |      |
+       |      O
+       |     /|\\
+       |      
+       |     
+    --------
+    """,
+    """
+       --------
+       |      |
+       |      O
+       |     /|\\
+       |     / 
+       |     
+    --------
+    """,
+    """
+       --------
+       |      |
+       |      O
+       |     /|\\
+       |     / \\
+       |     
+    --------
+    """
+]
+print("Welcome to Hangman Game!")
+item=['apple','banana','cat']    #create and import items for more words
+chance=6
+items=random.choice(item)
+# print(items)
+list=[]
+for i in items:
+    list += '_'
+print(list)
+over = False
+while not over:
+    ip=input("Guess the letter : ").lower()
+    if len(ip)==1 :
+        if ip in list:
+            print("Already there , Please Enter another character : ")
+            continue
+        for pos in range(len(items)):
+            letter=items[pos]
+            if letter==ip:
+                list[pos]=ip
+        print(list)
+        if ip not in items:
+            chance-=1
+            if chance==0:
+                over=True
+                print("loose")
+        if '_' not in list:
+            over=True
+            print("win")
+        print(stages[6-chance])
+        print(f"Guessing chances = {chance}")
+    else:
+        print("Enter single character")
+
+print(f"The Actual word is : {items}")
